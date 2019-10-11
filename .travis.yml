@@ -11,7 +11,7 @@ before_script:
   - python manage.py collectstatic --noinput
 
 script:
-  - python manage.py runserver
+  - python manage.py test polls
 
 #script:
 #  - black --check .
