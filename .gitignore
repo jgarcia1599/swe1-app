@@ -10,7 +10,7 @@
 
 staticfiles/
 static/
-__pycache__/
+mysite/__pycache__/
 
 .coverage
 htmlcov/

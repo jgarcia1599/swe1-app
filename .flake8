@@ -1,7 +1,8 @@
 [flake8]
 
-# 88 is Black's default line length
-max-line-length = 88
+# 88 is Black's default line length; however the maximum length of a line in mysite/setttings.py is 90
+# hence maximum is set to 90 to avoid the warning
+max-line-length = 90
 
 # we want to ignore the following files
 exclude = __pycache__, .git, venv/
