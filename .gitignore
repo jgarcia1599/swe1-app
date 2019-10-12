@@ -9,6 +9,7 @@
 *.pyc
 
 staticfiles/
+static/
 
 .coverage
 htmlcov/
