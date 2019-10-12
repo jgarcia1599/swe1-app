@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -121,5 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+# # Line below alone causes error when building with Travis CI
+# import django_heroku
+# django_heroku.settings(locals())
+
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
