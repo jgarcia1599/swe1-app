@@ -11,14 +11,9 @@ before_script:
   - python manage.py collectstatic --noinput
 
 script:
-  - python manage.py test polls
+  - black --check .
+  - flake8 .
+  - coverage run --source=mysite,polls manage.py test
 
-#asd
-
-#script:
-#  - black --check .
-#  - flake8 .
-#  - coverage run --source=swe1,polls manage.py test
-#
-#after_script:
-#  - coveralls
+after_script:
+  - coveralls
