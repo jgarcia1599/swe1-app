@@ -1,0 +1,35 @@
+dist: focal
+language: python
+python:
+  - "3.9"
+
+# Install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install black flake8 coverage coveralls
+
+# Command to run tests
+script:
+  - black --check .
+  - coverage run manage.py test
+  - flake8
+
+# After success, send coverage report to coveralls
+after_success:
+  - coveralls
+
+
+# Deploy to AWS Elastic Beanstalk
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: "$AWS_ACCESS_KEY_ID_MAIN"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY_MAIN"
+  region: "us-east-1"
+  app: "django-tutorial"  
+  env: "django-env"
+  bucket_name: "elasticbeanstalk-us-east-1-108782073805"
+  bucket_path: "django-tutorial"
+  zip_file: deploy_package.zip
+  skip_cleanup: true
+  on:
+    branch: main
