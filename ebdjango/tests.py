@@ -8,7 +8,7 @@ class IndexViewTests(TestCase):
 
     def test_index_page_loads(self):
         """Test that index page loads successfully"""
-        response = self.client.get(reverse('home'))
+        response = self.client.get(reverse("home"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Welcome to My Django App")
         self.assertContains(response, "Polls Application")
