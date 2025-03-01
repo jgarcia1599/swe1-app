@@ -1,6 +1,6 @@
 # swe1-app
 
-
+http://django-env.eba-t9ndukxg.us-east-1.elasticbeanstalk.com/
 
 Useful articles
 - https://stackoverflow.com/questions/69259774/error-notauthorizederror-operation-denied-on-aws-eb-init
