@@ -11,9 +11,7 @@ mccabe==0.7.0
 pycodestyle==2.12.1
 pyflakes==3.2.0
 python-dotenv==1.0.1
-requests==2.32git add requirements.txt
-git commit -m "Fix: Update coveralls version"
-git push origin main.3
+requests==2.32git
 sqlparse==0.5.3
 typing-extensions==4.12.2
 urllib3==2.3.0
